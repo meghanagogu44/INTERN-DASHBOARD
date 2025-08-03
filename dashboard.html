@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard</title>
+</head>
+<style>
+       body{
+              background-color:rgb(131, 66, 77);
+         
+       }
+     #dashboard{
+                 height:50vh;
+                 width:50vw;
+                 margin:0px;
+                 padding:0px;
+                 background-color: rgb(152, 140, 164);
+                 color:white;
+                 font-size: larger; 
+                 border-radius: 0px 25px 0px 25px ;
+
+     }
+
+
+</style>
+<body>
+  <div id="dashboard">
+    <h2>Intern Dashboard</h2>
+    <p>👤 Name: <span id="name"></span></p>
+    <p>📢 Referral Code: REF2025</p>
+    <p>💰 Donations: ₹5000</p>
+    <p>🎁 Rewards: Amazon Voucher - ₹200</p>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <script>
+    const internName = localStorage.getItem("internName");
+    if (!internName) {
+      alert("Please login first.");
+      window.location.href = "login.html";
+    } else {
+      document.getElementById("name").innerText = internName;
+    }
+
+    function logout() {
+      localStorage.removeItem("internName");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
